@@ -55,29 +55,32 @@ class SubmissionListView(View):
                     submissions.insert(0,user_submissions[0])
 
         for submission in submissions:
-            team = submission.team
-            members = team.members.all()
-            discord_members = []
-            for member in members:
-                new_member = {}
-                if member.id == request.user.id:
-                    is_in_team = True
-                try:
-                    user = SocialAccount.objects.get(user_id=member.id)
-                except SocialAccount.DoesNotExist:
-                    pass
-                else:
-                    new_member["user_id"] = user.uid
-                    avatar_url = user.get_avatar_url()
-                    if avatar_url.endswith("None.png"):
-                        random = randint(0, 4)
-                        avatar_url = f'https://cdn.discordapp.com/embed/avatars/{random}.png'
-                    new_member["avatar_url"] = avatar_url
-                    new_member["username"] = user.extra_data["username"]
-                    new_member["discriminator"] = user.extra_data["discriminator"]
-                discord_members.append(new_member)
-            team.discord_members = discord_members
-            submission.team = team
+            if submission.team.submitted:
+                team = submission.team
+                members = team.members.all()
+                discord_members = []
+                for member in members:
+                    new_member = {}
+                    if member.id == request.user.id:
+                        is_in_team = True
+                    try:
+                        user = SocialAccount.objects.get(user_id=member.id)
+                    except SocialAccount.DoesNotExist:
+                        pass
+                    else:
+                        new_member["user_id"] = user.uid
+                        avatar_url = user.get_avatar_url()
+                        if avatar_url.endswith("None.png"):
+                            random = randint(0, 4)
+                            avatar_url = f'https://cdn.discordapp.com/embed/avatars/{random}.png'
+                        new_member["avatar_url"] = avatar_url
+                        new_member["username"] = user.extra_data["username"]
+                        new_member["discriminator"] = user.extra_data["discriminator"]
+                    discord_members.append(new_member)
+                team.discord_members = discord_members
+                submission.team = team
+            else:
+                submissions.remove(submission)    
         context["submissions"] = submissions
         context["challenge"] = challenge
         return render(request, 'timathon/submissions_list.html', context)
