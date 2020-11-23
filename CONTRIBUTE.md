@@ -49,23 +49,11 @@ The following is the tree representation of the code jam website
 │   │   │   ├── __init__.py
 │   │   │   ├── admin.py
 │   │   │   ├── migrations
-│   │   │   │   ├── 0001_initial.py
-│   │   │   │   ├── 0002_challenge_ended.py
-│   │   │   │   ├── 0003_auto_20200926_0331.py
-│   │   │   │   ├── 0004_team.py
-│   │   │   │   ├── 0005_auto_20200926_1741.py
-│   │   │   │   ├── 0006_delete_team.py
-│   │   │   │   ├── 0007_challenge_status.py
-│   │   │   │   ├── 0008_auto_20200929_0004.py
-│   │   │   │   ├── 0009_challenge_voting_status.py
-│   │   │   │   ├── 0010_challenge_members_voted.py
-│   │   │   │   ├── 0011_auto_20201005_1657.py
-│   │   │   │   ├── 0012_remove_challenge_members_voted.py
-│   │   │   │   ├── 0013_auto_20201006_1749.py
-│   │   │   │   ├── 0014_custompage.py
-│   │   │   │   ├── 0015_auto_20201010_0224.py
-│   │   │   │   ├── 0016_custompage_page_menu_name.py
-│   │   │   │   └── __init__.py
+│   │   │   │   
+│   │   │   │   
+│   │   │   │   
+│   │   │   │   
+│   │   │   │   
 │   │   │   ├── models
 │   │   │   │   ├── __init__.py
 │   │   │   │   ├── challenge.py
@@ -93,17 +81,6 @@ The following is the tree representation of the code jam website
 │   │   │   ├── __init__.py
 │   │   │   ├── admin.py
 │   │   │   ├── migrations
-│   │   │   │   ├── 0001_initial.py
-│   │   │   │   ├── 0002_team_votes.py
-│   │   │   │   ├── 0003_submission_challenge.py
-│   │   │   │   ├── 0004_team_voted_by.py
-│   │   │   │   ├── 0005_auto_20201006_0128.py
-│   │   │   │   ├── 0006_auto_20201006_0131.py
-│   │   │   │   ├── 0007_auto_20201006_0137.py
-│   │   │   │   ├── 0008_auto_20201006_0229.py
-│   │   │   │   ├── 0009_auto_20201020_0030.py
-│   │   │   │   ├── 0010_auto_20201020_0033.py
-│   │   │   │   └── __init__.py
 │   │   │   ├── models
 │   │   │   │   ├── __init__.py
 │   │   │   │   ├── submission.py
