@@ -6,7 +6,7 @@ To see how to setup please see [setup](SETUP.md)
 
 ## Contributing
 
-To see how to contribute to the website please see [Contributing](CONTRIBUTE.md)
+To see how to contribute to the website please see [Contributing](CONTRIBUTE.md). To view the directory structure in tree view see [Structure](STRUCTURE.md)
 
 ### Reporting Bugs
 To report a bug, make a issue with the bug report template
