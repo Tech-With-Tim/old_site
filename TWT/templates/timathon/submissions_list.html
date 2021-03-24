@@ -14,7 +14,7 @@
             <br>
             <div class="submission-view-container">
                 <h2><b>{{ submission.team.name }}</b></h2><br>
-                <p class="text-white" style="font-size: large;">{{ submission.description }}</p><br>
+                <p class="text-white" style="font-size: large;">{% for char in submission.description %}{% if char == "\n" %}<br>{% else %}{{ char }}{% endif %}{% endfor %}</p><br>
                 <a class="btn btn-dark git-link" href="{{ submission.github_link }}"
                    title="{{ submission.github_link }}" target="_blank">GitHub</a><br><br>
                 <div class="members-list">
