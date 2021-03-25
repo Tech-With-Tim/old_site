@@ -8,13 +8,14 @@
 
 {% block title %}Code Jam Submission{% endblock %}
 {% block content %}
+    <script src="https://cdn.jsdelivr.net/remarkable/1.7.1/remarkable.min.js"></script>
     {% include "base/navbar.html" %}
     <div class="containers">
         {% for submission in submissions %}
             <br>
             <div class="submission-view-container">
                 <h2><b>{{ submission.team.name }}</b></h2><br>
-                <p class="text-white" style="font-size: large;">{{ submission.description }}</p><br>
+                <p class="text-white" style="font-size: large;" id="descr">{{ submission.description }}</p><br>
                 <a class="btn btn-dark git-link" href="{{ submission.github_link }}"
                    title="{{ submission.github_link }}">GitHub</a><br><br>
                 <div class="members-list">
@@ -40,6 +41,12 @@
             </div>
         {% endfor %}
     </div>
+
+    <script>
+        var md = new Remarkable();
+        let desc = document.getElementById("descr");
+        descr.innerText = md.render(desc.innerText);
+    </script>
 
 
 {% endblock %}
