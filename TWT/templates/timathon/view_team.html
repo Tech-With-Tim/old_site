@@ -8,6 +8,7 @@
 {% endblock %}
 
 {% block content %}
+    <script src="https://cdn.jsdelivr.net/remarkable/1.7.1/remarkable.min.js"></script>
     {% include 'base/navbar.html' %}
     <div class="container">
         <center><h1 class="team-name">{{ team.name }}</h1></center>
@@ -55,11 +56,14 @@
             <a class="btn btn-dark" style="background-color: #FF7746; margin-left: 10px" href="{{ submission.github_link }}">Github Repository</a>
             <br><br>
             <h3>Description:</h3>
-            <h6 style="margin-left: 2px">{{ submission.description }}</h6>
+            <h6 style="margin-left: 2px" id="descr">{{ submission.description }}</h6>
 
         </div>
     {% endif %}
     <script type="text/javascript">
+        var md = new Remarkable();
+        let desc = document.getElementById("descr");
+        descr.innerHTML = md.render(desc.innerText);
         function Copy()
         {
             var invite = document.getElementById("invite");
