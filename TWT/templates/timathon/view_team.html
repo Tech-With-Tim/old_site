@@ -55,11 +55,14 @@
             <a class="btn btn-dark" style="background-color: #FF7746; margin-left: 10px" href="{{ submission.github_link }}">Github Repository</a>
             <br><br>
             <h3>Description:</h3>
-            <h6 style="margin-left: 2px">{{ submission.description }}</h6>
+            <h6 style="margin-left: 2px" id="descr">{{ submission.description }}</h6>
 
         </div>
     {% endif %}
     <script type="text/javascript">
+        var md = new Remarkable();
+        let descr = document.getElementById("descr");
+        descr.innerText = md.render(descr.innerText);
         function Copy()
         {
             var invite = document.getElementById("invite");
