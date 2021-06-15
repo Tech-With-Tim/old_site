@@ -149,10 +149,6 @@
     grid-gap: 1rem;
   }
 
-  .base-timer__svg{
-    display: none;
-  }
-
   .base-timer__label{
     position: initial;
   }
