@@ -40,7 +40,7 @@ class SubmissionListView(View):
             not context["is_staff"] and challenge.team_creation_status
         ):
             messages.add_message(
-                request, messages.INFO, "The voting period is not open please wait"
+                request, messages.INFO, "Submissions have not closed yet, please wait for them the same!"
             )
             return redirect("timathon:Home")
         submissions = Submission.objects.filter(challenge=challenge)
