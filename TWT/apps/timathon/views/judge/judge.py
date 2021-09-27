@@ -42,7 +42,7 @@ class JudgeView(View):
             return redirect("/")
 
         submissions = Submission.objects.filter(
-            challenge=challenge).order_by("-vote")
+            challenge=challenge)
         submissions = list(submissions)
 
         for submission in submissions:
@@ -73,6 +73,7 @@ class JudgeView(View):
                 average=Avg("c1") + Avg("c2") + Avg("c3") + Avg("c4")
             )["average"]
 
-        context["submissions"] = submissions
+        context["submissions"] = submissions = sorted(
+            submissions, key=lambda x: len(x.vote_set.all()))
         context["challenge"] = challenge
         return render(request, "timathon/judge.html", context)
