@@ -73,6 +73,6 @@ class JudgeView(View):
             )["average"]
 
         context["submissions"] = sorted(
-            submissions, key=lambda x: len(x.vote_set.all()))
+            submissions, key=lambda x: len(x.vote_set.all()))[::-1]
         context["challenge"] = challenge
         return render(request, "timathon/judge.html", context)
