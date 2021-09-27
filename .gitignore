@@ -136,5 +136,4 @@ dmypy.json
 our_secrets.py
 settings.json
 
-TWT/settings.py
-TWT/discord.py
+
