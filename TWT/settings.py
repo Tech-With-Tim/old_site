@@ -30,7 +30,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = our_secrets.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = our_secrets.ALLOWED_HOSTS
 
@@ -147,7 +147,8 @@ MARTOR_ENABLE_CONFIGS = {
     "emoji": "true",  # to enable/disable emoji icons.
     "imgur": "false",  # to enable/disable imgur/custom uploader.
     "mention": "false",  # to enable/disable mention
-    "jquery": "true",  # to include/revoke jquery (require for admin default django)
+    # to include/revoke jquery (require for admin default django)
+    "jquery": "true",
     "living": "true",  # to enable/disable live updates in preview
     "spellcheck": "true",  # to enable/disable spellcheck in form textareas
     "hljs": "true",  # to enable/disable hljs highlighting in preview
