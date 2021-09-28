@@ -33,16 +33,14 @@ class JudgeView(View):
             return redirect("timathon:Home")
 
         try:
-            challenge = Challenge.objects.get(
-                ended=False, posted=True, type="MO")
+            challenge = Challenge.objects.get(ended=False, posted=True, type="MO")
         except Challenge.DoesNotExist:
             messages.add_message(
                 request, messages.INFO, "There is no ongoing challenge right now."
             )
             return redirect("/")
 
-        submissions = Submission.objects.filter(
-            challenge=challenge)
+        submissions = Submission.objects.filter(challenge=challenge)
         submissions = list(submissions)
 
         for submission in submissions:
@@ -74,6 +72,7 @@ class JudgeView(View):
             )["average"]
 
         context["submissions"] = submissions = sorted(
-            submissions, key=lambda x: len(x.vote_set.all()))
+            submissions, key=lambda x: len(x.vote_set.all())
+        )
         context["challenge"] = challenge
         return render(request, "timathon/judge.html", context)
