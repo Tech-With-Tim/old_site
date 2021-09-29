@@ -40,7 +40,7 @@ class JudgeView(View):
             )
             return redirect("/")
 
-        submissions = Submission.objects.filter(challenge=challenge)
+        submissions = Submission.objects.filter(challenge=challenge).order_by("-votes")
         submissions = list(submissions)
 
         for submission in submissions:
