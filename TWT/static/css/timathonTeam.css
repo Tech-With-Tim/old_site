@@ -1,5 +1,7 @@
 
 
+
+
  .team-container {
  color:#F9F9FA;
  font-family:Roboto;
@@ -114,6 +116,53 @@ padding: 10px;
     height:auto;
 }
 
+table{
+    color: white;
+    border: 2px solid red;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: .5rem;
+    width: 70vw;
+}
+
+tr{
+    border: 2px solid orange;
+    
+}
+
+th{
+    border: 4px solid orange;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: .5rem;
+}
+
+td{
+    border: 4px solid orange;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: .5rem;
+    word-wrap: break-word;
+}
+
+/* @media (max-width: 900px){
+    table{
+        width: 80vw;
+    }
+}
+
+@media (max-width: 800px){
+    table{
+        width: 550px;
+    }
+}
+
+@media (max-width: 700px) {
+    table{
+        width: 500px;
+    }
+} */
+
 @media screen and (max-width: 768px){
     .members-card{
         flex: 1;
@@ -128,6 +177,5 @@ padding: 10px;
     border-radius: 0px;
     }
 }
-
 
 

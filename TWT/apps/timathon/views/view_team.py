@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from random import randint
 from TWT.apps.challenges.models import Challenge
-from TWT.apps.timathon.models import Team
+from TWT.apps.timathon.models import Team, Vote
 from TWT.context import get_discord_context
 from ..models import Submission
 
@@ -45,9 +45,11 @@ class View_teams(View):
         context["challenge"] = team.challenge
         if team.submitted:
             try:
-                context["submission"] = Submission.objects.get(
+                team_submission = Submission.objects.get(
                     team=team, challenge=team.challenge
                 )
+                context["submission"] = team_submission
+                context["votes"] = Vote.objects.filter(submission=team_submission)
             except:
                 pass
         print(context["challenge"].submissions_status)
