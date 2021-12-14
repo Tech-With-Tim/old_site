@@ -145,23 +145,6 @@ td{
     word-wrap: break-word;
 }
 
-/* @media (max-width: 900px){
-    table{
-        width: 80vw;
-    }
-}
-
-@media (max-width: 800px){
-    table{
-        width: 550px;
-    }
-}
-
-@media (max-width: 700px) {
-    table{
-        width: 500px;
-    }
-} */
 
 @media screen and (max-width: 768px){
     .members-card{

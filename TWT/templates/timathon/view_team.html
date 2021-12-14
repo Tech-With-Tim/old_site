@@ -59,6 +59,29 @@
 
         </div>
     {% endif %}
+
+    {% if not challenge.voting_status and votes %}
+        <h2 align="center" style="color:white">Marks Breakdown</h2>
+        <table>
+            <tr>
+                <th>C1</th>
+                <th>C2</th>
+                <th>C3</th>
+                <th>C4</th>
+                <th>Notes</th>
+            </tr>
+            {% for vote in votes %}
+                <tr>
+                    <td>{{ vote.c1 }}</td>
+                    <td>{{ vote.c2 }}</td>
+                    <td>{{ vote.c3 }}</td>
+                    <td>{{ vote.c4 }}</td>
+                    <td>{{ vote.notes }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+    
     <script type="text/javascript">
         function Copy()
         {
