@@ -60,7 +60,7 @@
         </div>
     {% endif %}
 
-    {% if not challenge.voting_status and votes %}
+    {% if not challenge.voting_status and votes and user in team.members.all %}
         <h2 align="center" style="color:white">Marks Breakdown</h2>
         <table>
             <tr>
