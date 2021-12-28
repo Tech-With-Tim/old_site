@@ -49,7 +49,16 @@ class View_teams(View):
                     team=team, challenge=team.challenge
                 )
                 context["submission"] = team_submission
-                context["votes"] = Vote.objects.filter(submission=team_submission)
+
+                votes = Vote.objects.filter(submission=team_submission)
+
+                context['avg_1'] = sum(map(lambda x: x.c1, votes)) / len(votes)
+                context['avg_2'] = sum(map(lambda x: x.c2, votes)) / len(votes)
+                context['avg_3'] = sum(map(lambda x: x.c3, votes)) / len(votes)
+                context['avg_4'] = sum(map(lambda x: x.c4, votes)) / len(votes)
+
+                context['total_score'] = context['avg_1'] + context['avg_2'] + context['avg_3'] + context['avg_4']
+                context['votes'] = votes
             except:
                 pass
         print(context["challenge"].submissions_status)
