@@ -22,8 +22,8 @@ get_random_secret_key()
 ** **
 * Now open TWT/settings.py and turn `DEBUG = True`
 
-* Open TWT/discord.py and edit the guild_id in lines 79, 82, 85 according to your server
-* edit all the role ids in lines 89-95
+* Open TWT/discord.py and edit the guild_id in lines 101, 104, 110 according to your server
+* edit all the role ids in lines 118-123
 
 ** **
 * `Now run python manage.py makemigrations`
@@ -49,4 +49,4 @@ get_random_secret_key()
 ![sc](https://cdn.discordapp.com/attachments/759043214153089043/761866434627895296/unknown.png)
 ##### You should select them and transfer
 
-If you have problems in setting up please post in [#Code-jam-website](https://discordapp.com/channels/501090983539245061/763445637441519646/)
+If you have problems in setting up please post in [#contrib-general](https://discord.com/channels/501090983539245061/795982206085890078)
