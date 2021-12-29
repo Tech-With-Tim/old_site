@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 .navigation-clean-button.navbar-light .navbar-nav .nav-link:hover {
   color: #fff;
 }
@@ -7,7 +8,10 @@
   background-color: #fff;
   margin-top: 100px;
 }
-
+strong{
+    color: #FF7746;
+    font-weight: bold;
+}
 .brands a {
   display: block;
   text-align: center;
