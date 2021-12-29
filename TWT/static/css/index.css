@@ -12,6 +12,15 @@ strong{
     color: #FF7746;
     font-weight: bold;
 }
+.fill-button{
+    box-shadow: inset 0 0 0 0 #FF7746;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+.fill-button:hover{
+    box-shadow: inset 400px 0 0 0 #FF7746
+}
 .brands a {
   display: block;
   text-align: center;
