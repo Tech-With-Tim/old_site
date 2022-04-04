@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from random import randint
 from TWT.apps.challenges.models import Challenge
-from TWT.apps.timathon.models import Team
+from TWT.apps.timathon.models import Team, Vote
 from TWT.context import get_discord_context
 from ..models import Submission
 
@@ -45,9 +45,20 @@ class View_teams(View):
         context["challenge"] = team.challenge
         if team.submitted:
             try:
-                context["submission"] = Submission.objects.get(
+                team_submission = Submission.objects.get(
                     team=team, challenge=team.challenge
                 )
+                context["submission"] = team_submission
+
+                votes = Vote.objects.filter(submission=team_submission)
+
+                context['avg_1'] = sum(map(lambda x: x.c1, votes)) / len(votes)
+                context['avg_2'] = sum(map(lambda x: x.c2, votes)) / len(votes)
+                context['avg_3'] = sum(map(lambda x: x.c3, votes)) / len(votes)
+                context['avg_4'] = sum(map(lambda x: x.c4, votes)) / len(votes)
+
+                context['total_score'] = context['avg_1'] + context['avg_2'] + context['avg_3'] + context['avg_4']
+                context['votes'] = votes
             except:
                 pass
         print(context["challenge"].submissions_status)
